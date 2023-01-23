@@ -15,3 +15,43 @@ empty() – Returns whether the container is empty.
 shrink_to_fit() – Reduces the capacity of the container to fit its size and destroys all elements beyond the capacity.
 reserve() – Requests that the vector capacity be at least enough to contain n elements.
 */
+#include <iostream>
+#include <vector>
+using namespace std;
+int main(){
+    vector<int> v1; //declaration of vector
+    int n;
+    cin>>n;
+    v1.assign(2, 100); //assigning 100(2 times) to the vector
+    for(int i=0;i<n;i++){
+        int x;
+        cin>>x;
+        v1.push_back(x); //adding some more elements to vector
+    }
+    v1.emplace_back(10); //To add element to vector
+    v1.emplace(v1.begin(), 20); //to add element at particular position
+    v1.insert(v1.begin()+1, 5); //to insert an element at a position
+    v1.erase(v1.begin()); //to erase the element at particular position
+    int x= v1.size(); //to know the size of vector
+    cout<<"The size of vector: "<<x<<endl;;
+    for(int i=0; i<v1.size(); i++){
+        cout<<v1[i]<<" ";
+    }
+    cout<<endl;
+    vector<int>v2; //declaring another vector
+    v2.push_back(12332);
+    v1.swap(v2); //swapping one vector to another
+    for(int i=0; i<v1.size(); i++){
+        cout<<v1[i]<<" ";
+    }
+    cout<<endl;
+    for(int i=0; i<v2.size(); i++){
+        cout<<v2[i]<<" ";
+    }
+    cout<<endl;
+    v1.clear(); //to clear the vector
+    x= v1.size();
+    cout<<"The size of vector: "<<x<<endl;
+    for (auto i = v2.begin(); i != v2.end(); ++i) //we can use these methods in loops
+        cout << *i << " ";
+    }
