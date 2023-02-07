@@ -5,7 +5,7 @@ void PrintSubsets(int ind, int arr[], int n, vector<int>&ds){
     for(int it: ds) cout<<it<<" ";
     cout<<"\n";
     return;}
-  ds.push_back(
+  ds.push_back();
   
 int main(){
   int n = 3;
